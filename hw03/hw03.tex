@@ -394,7 +394,8 @@ The bifurcation diagram of $x$ vs. $r$ is below:
 			\addplot[mark=halfcircle*, mark options={rotate=90}, mark size=3pt] coordinates {(1, -2)} node[above]{$(1,-2)$};
 			% add half circle at (-1,2)
 			\addplot[mark=halfcircle*, mark options={rotate=90}, mark size=3pt] coordinates {(-1, 2)} node[below]{$(-1,2)$};
-
+		
+		\legend{Stable, Unstable}
 		\end{axis}
 		\end{tikzpicture}
 
@@ -627,7 +628,7 @@ The bifurcation diagram of $x$ vs. $r$ is below:
 	% add half circle at (0,1)
 	\addplot[mark=halfcircle*, mark options={rotate=90}, mark size=3pt] coordinates {(0, 1)} node[above]{$(0,1)$};
 
-
+	\legend{Stable, Unstable}
 	\end{axis}
 \end{tikzpicture}
 
@@ -768,6 +769,8 @@ The subcritical pitchfork bifurcation diagram of $x$ vs. $r$ is below:
 
 	% -\left(\sqrt{2}x\right)^{2} where x \in [-1,1] with dash line
 	\addplot[blue, domain=-2:2, samples=200, dashed] {-(sqrt(2)*x)^2};
+	% add vertical line y=0 from x=0 to x=-4
+	\addplot[blue, domain=-2:2, samples=100] coordinates {(0,0) (0,-4)};
 	% add horizontal line x=0
 	\addplot[orange, domain=-2:2, samples=100] {0};
 	% add vertical line y=0
@@ -779,7 +782,8 @@ The subcritical pitchfork bifurcation diagram of $x$ vs. $r$ is below:
 
 	% add hollow point at (0,0)
 	\addplot[only marks, mark=o, mark size=2pt, color=red] coordinates {(0,0)} node[above]{$(0,0)$};
-
+	
+	\legend{Unstable, Stable}
 	\end{axis}
 \end{tikzpicture}
 
@@ -977,6 +981,7 @@ Consider the ODE $x'=rx-\sin x$.
 		% add vertical line y=0 from x=1 to x=-0.5
 		\addplot[blue, domain=-20:20, samples=100, thick] coordinates {(0,1) (0,-0.5)};
 		
+		\legend{Unstable, Stable}
 		\end{axis}
 	\end{tikzpicture}
 
