@@ -113,14 +113,16 @@
      \item To write the second-order ordinary differential equation
 	  \[x'' + \mu x' = \cos t \]
 	in a system of first-order ordinary differential equations, you can introduce new variables to break it down. Let's set:
-	\[x_1 = x ,\quad x_2 = x'\]
+	\[x_1 = t ,\quad x_2 = x(t), \quad x_3=x'(t)\]
 	Now we can write two first-order equations using these new variables:
-	\[x'_1 = x_2 ,\quad x'_2 = \cos t - \mu x_2\]
+	\[x'_1 = 1 ,\quad x'_2 = x_3, \quad x'_3=\cos(x_1) - \mu x'_2\]
 	So the system of equations in the form \(x'_i = f_i(x_1, x_2)\) would be:
 	\[\begin{cases}
-		x'_1 = x_2 \\
-		x'_2 = \cos t - \mu x_2
+		x'_1 = 1 \\
+		x'_2 = x_3 \\
+		x'_3 = \cos(x_1) - \mu x_3
 	\end{cases}\]
+
 	
      \item To write the second-order ordinary differential equation
 	  \[\begin{cases}
@@ -159,6 +161,7 @@
 		\addplot[orange, domain=-5:5, samples=100]{0};
 		% add a red point at (2,0) and add lebal to the red point
 		\addplot[only marks, mark=o, mark size=3pt, color=red] coordinates {(2,0)} node[anchor=north] {\((2,0)\)};
+		
 		% add a hollow point at (-2,0) and add lebal to the red point
 		\addplot[only marks, mark=*, mark size=3pt, color=red] coordinates {(-2,0)} node[anchor=north] {\((-2,0)\)};
 
@@ -620,7 +623,7 @@
 						grid=major,
 						width=14cm,
 						height=14cm,
-						]
+					]
 						\addplot[quiver={u=\thisrow{U},v=\thisrow{V},scale arrows=0.2},-stealth, color=blue] table [x=T, y=X, col sep=comma] {vector_field_data.csv};
 					\end{axis}
 				\end{tikzpicture}
