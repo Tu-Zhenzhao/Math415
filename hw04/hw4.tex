@@ -271,23 +271,24 @@ The IVP
 		In characteristic equation, we have $r_{1,2}$ in part (1), so let's analyze the roots.
 		\[r_{1,2}=\frac{-1\pm\sqrt{1-4\epsilon}}{2\epsilon}.\]
 		When $\epsilon \ll 1$, and by given $\sqrt{1-4\epsilon}\approx 1-2\epsilon+\BO(\epsilon^2)$, we have
-		\[r_1= \frac{-1+\sqrt{1-4\epsilon}}{2\epsilon} \approx \frac{-1+1-2\epsilon}{2\epsilon} = -1.\]
+		\[r_2= \frac{-1+\sqrt{1-4\epsilon}}{2\epsilon} \approx \frac{-1+1-2\epsilon}{2\epsilon} = -1.\]
 		and
-		\[r_2= \frac{-1-\sqrt{1-4\epsilon}}{2\epsilon} \approx \frac{-1-1+2\epsilon}{2\epsilon} = \frac{\epsilon-1}{\epsilon} = 1-\frac{1}{\epsilon}.\]
+		\[r_1= \frac{-1-\sqrt{1-4\epsilon}}{2\epsilon} \approx \frac{-1-1+2\epsilon}{2\epsilon} = \frac{\epsilon-1}{\epsilon} = 1-\frac{1}{\epsilon}.\]
 		Then we have $r_1=-1$ the root remains of the order of $1$ as $\epsilon \to 0$, and $r_2=1-\frac{1}{\epsilon}$ the root becomes large as $\epsilon \to 0$. Therefore, we have $r_1$ is the slow timescale and $r_2$ is the fast timescale.
 		Thus, the two timescales $\tau_1$ and $\tau_2$ are
-		\[\tau_1 = \frac{1}{|r_1|} = 1, \quad \tau_2 = \frac{1}{|r_2|} = \frac{1}{1-\frac{1}{\epsilon}} = \frac{\epsilon}{\epsilon-1}.\]
+		\[\tau_2 = \frac{1}{|r_2|} = 1, \quad \tau_1 = \frac{1}{|r_1|} = \frac{1}{|1-\frac{1}{\epsilon}|} = \frac{\epsilon}{1-\epsilon}.\]
 		
-	\item Now let's plug $r_1=-1, r_2=\frac{\epsilon-1}{\epsilon}$ into original $x(t)$ we get:
-		\[x(t)= c_1e^{-t}+c_2e^{\frac{\epsilon-1}{\epsilon} t}.\]
-		Then we solving $c_1$ and $c_2$ by using initial condition $x(0)=1$ and $x'(0)=0$:
-		\[c_1 = -\frac{1-\epsilon}{2\epsilon-1}, \quad c_2 = \frac{\epsilon}{2\epsilon-1}.\]
-		Then the solution is
-		\[x(t)=\frac{1-\epsilon}{2\epsilon-1}e^{-t}+\frac{\epsilon}{2\epsilon-1}e^{\frac{\epsilon-1}{\epsilon} t}.\]
-		Then we can plot the solution for $\epsilon=0.1, 0.01, 0.001$ as shown below:
+	\item Now let's plot the $x(t)$ and with two timescales $\tau_2=1, \tau_1=\frac{\epsilon}{1-\epsilon}$. Then we can plot the solution for $\epsilon=0.1$ as shown below:
+			
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.8\linewidth] {x(t).pdf}
+					\caption{Solution for $\epsilon=0.1$, Red line is $\tau_2$ and blue line is $\tau_1$.}
+					
+				\end{figure}
 
-
-
+	\item When is valid to replace $\epsilon x''+x'+x=0$ with singular limit $x'+x=0$. 
+					Let's consider the singular limit $x'+x=0$, then we know that it is also $x(t) = c_1e^{-t}$. If we looking back to the solution in part (1), we know that to such singular limit, we have to set $c_2\exp(t-t/\epsilon)=0$. However, only $t \to \infty$ can make $c_2\exp(t-t/\epsilon)=0$. Therefore, the statement is valid when $t$ is significantly large to infinity.
 
 \end{enumerate}
 
@@ -422,14 +423,14 @@ Consider the epidemic model
 		\[z' = l(x_0+y_0-z-x_0\exp(-kz/l)).\]
 		
 	\item To do non-dimensionalization to this ODE, we first set
-		\[u = \frac{k}{l}z, \quad \tau = lx_0t.\]
+					\[u = \frac{k}{l}z, \quad \tau = \frac{x_0}{k}t.\]
 		Then consider
-		\[\frac{dz}{dt} = \frac{dz}{d\tau}\frac{d\tau}{dt} = \frac{dz}{d\tau}lx_0.\]
+		\[\frac{dz}{dt} = \frac{dz}{d\tau}\frac{d\tau}{dt} = \frac{dz}{d\tau}\frac{x_0}{k}.\]
 		Then we have
-		\[\frac{dz}{d\tau} = \frac{1}{lx_0}\frac{dz}{dt}.\]
+		\[\frac{dz}{d\tau} = \frac{k}{x_0}\frac{dz}{dt}.\]
 		Recall the ODE in (3), we have
 		\begin{align*}
-			\frac{dz}{d\tau} &= \frac{1}{lx_0}\frac{dz}{dt} \\
+			\frac{du}{d\tau} &= \frac{1}{lx_0}\frac{dz}{dt} \\
 					 &= \frac{l}{lx_0}(x_0+y_0-z-x_0 e^{-\frac{kz}{l}}) \\
 			&= \frac{x_0+y_0}{x_0}-\frac{z}{x_0}-e^{-\frac{kz}{l}}) \\
 			&= \frac{x_0+y_0}{x_0}-\frac{u}{x_0}-e^{-u}.

@@ -10,16 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    595350,       9916]
-NotebookOptionsPosition[    593476,       9877]
-NotebookOutlinePosition[    593869,       9893]
-CellTagsIndexPosition[    593826,       9890]
+NotebookDataLength[    603267,      10110]
+NotebookOptionsPosition[    601069,      10066]
+NotebookOutlinePosition[    601460,      10082]
+CellTagsIndexPosition[    601417,      10079]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData["d"], "Input",
+ CellChangeTimes->{
+  3.9062109067956533`*^9},ExpressionUUID->"ffe8c97a-4650-4562-8096-\
+54241561ac5a"],
 
 Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"Plot3D", "[", 
@@ -9720,56 +9725,95 @@ Cell[BoxData[{
             RowBox[{"4", " ", "\[CurlyEpsilon]"}]}], "]"}]}], ")"}], "/", 
         RowBox[{"(", 
          RowBox[{"2", " ", "\[CurlyEpsilon]"}], ")"}]}], " ", "t"}], 
-      "]"}]}]}]}], "\n"}], "\[IndentingNewLine]", 
+      "]"}]}]}]}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{"Manipulate", "[", 
   RowBox[{
    RowBox[{"Plot", "[", 
     RowBox[{
-     RowBox[{"x", "[", 
-      RowBox[{"t", ",", "\[CurlyEpsilon]"}], "]"}], ",", 
+     RowBox[{"x", "[", " ", 
+      RowBox[{"t", ",", "\[Epsilon]"}], "]"}], ",", 
      RowBox[{"{", 
-      RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+      RowBox[{"t", ",", "0", ",", "1"}], "}"}], ",", 
      RowBox[{"PlotRange", "->", "All"}], ",", 
      RowBox[{"AxesLabel", "->", 
       RowBox[{"{", 
        RowBox[{"\"\<t\>\"", ",", "\"\<x(t)\>\""}], "}"}]}], ",", 
-     RowBox[{
-     "PlotLabel", "->", "\"\<Plot of x(t) for given \[CurlyEpsilon]\>\""}]}], 
-    "]"}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Plot of x(t) for given \[Epsilon]\>\""}],
+      ",", 
+     RowBox[{"Epilog", "->", 
+      RowBox[{"{", 
+       RowBox[{"Dashed", ",", "Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\[Epsilon]", "/", 
+              RowBox[{"(", 
+               RowBox[{"1", "-", "\[Epsilon]"}], ")"}]}], ",", 
+             RowBox[{"-", 
+              RowBox[{"10", "^", "6"}]}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\[Epsilon]", "/", 
+              RowBox[{"(", 
+               RowBox[{"1", "-", "\[Epsilon]"}], ")"}]}], ",", 
+             RowBox[{"10", "^", "6"}]}], "}"}]}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", "Dashed", ",", "Blue", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", 
+              RowBox[{"10", "^", "6"}]}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"10", "^", "6"}]}], "}"}]}], "}"}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"\[CurlyEpsilon]", ",", "0.1", ",", "\"\<\[CurlyEpsilon]\>\""}],
-       "}"}], ",", "0", ",", "0.5", ",", "0.01"}], "}"}]}], 
-  "]"}], "\n"}], "Input",
- CellChangeTimes->{{3.90612379210949*^9, 3.906123792111898*^9}},
- CellLabel->"In[42]:=",ExpressionUUID->"6c1181e8-63e3-45f3-871e-3fb2af95fdcc"],
+      RowBox[{"\[Epsilon]", ",", "0.1", ",", "\"\<\[Epsilon]\>\""}], "}"}], 
+     ",", "0", ",", "0.5", ",", "0.01"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.90612379210949*^9, 3.906123792111898*^9}, {
+  3.90621129218013*^9, 3.906211332140298*^9}, {3.906211413450718*^9, 
+  3.906211446207656*^9}, {3.906211540795187*^9, 3.906211543608119*^9}, {
+  3.906211615972844*^9, 3.90621165580996*^9}, {3.906211789735558*^9, 
+  3.906211812429071*^9}, {3.906211858489785*^9, 3.9062118712857*^9}},
+ CellLabel->"In[47]:=",ExpressionUUID->"6c1181e8-63e3-45f3-871e-3fb2af95fdcc"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`\[CurlyEpsilon]$$ = 0.01, Typeset`show$$ = 
-    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+   DynamicModuleBox[{$CellContext`\[Epsilon]$$ = 0.01, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`\[CurlyEpsilon]$$], 0.1, "\[CurlyEpsilon]"}, 0, 0.5, 
-      0.01}}, Typeset`size$$ = {640., {206., 210.}}, Typeset`update$$ = 0, 
+       Hold[$CellContext`\[Epsilon]$$], 0.1, "\[Epsilon]"}, 0, 0.5, 0.01}}, 
+    Typeset`size$$ = {360., {119., 123.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`\[CurlyEpsilon]$$ = 0.1}, 
+     1, StandardForm, "Variables" :> {$CellContext`\[Epsilon]$$ = 0.1}, 
       "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> Plot[
-        $CellContext`x[$CellContext`t, $CellContext`\[CurlyEpsilon]$$], \
-{$CellContext`t, 0, 10}, PlotRange -> All, AxesLabel -> {"t", "x(t)"}, 
-        PlotLabel -> "Plot of x(t) for given \[CurlyEpsilon]"], 
-      "Specifications" :> {{{$CellContext`\[CurlyEpsilon]$$, 0.1, 
-          "\[CurlyEpsilon]"}, 0, 0.5, 0.01}}, "Options" :> {}, 
-      "DefaultOptions" :> {}],
-     ImageSizeCache->{684., {264., 270.}},
+        $CellContext`x[$CellContext`t, $CellContext`\[Epsilon]$$], \
+{$CellContext`t, 0, 1}, PlotRange -> All, AxesLabel -> {"t", "x(t)"}, 
+        PlotLabel -> "Plot of x(t) for given \[Epsilon]", 
+        Epilog -> {Dashed, Red, 
+          
+          Line[{{$CellContext`\[Epsilon]$$/(
+             1 - $CellContext`\[Epsilon]$$), -10^6}, \
+{$CellContext`\[Epsilon]$$/(1 - $CellContext`\[Epsilon]$$), 10^6}}], Dashed, 
+          Blue, 
+          Line[{{1, -10^6}, {1, 10^6}}]}], 
+      "Specifications" :> {{{$CellContext`\[Epsilon]$$, 0.1, "\[Epsilon]"}, 0,
+          0.5, 0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {177., 183.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -9780,86 +9824,110 @@ Cell[BoxData[
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{{3.906123793230946*^9, 3.9061238153106127`*^9}, {
-   3.9061259514185543`*^9, 3.906125962769886*^9}, 3.906126162678426*^9},
- CellLabel->"Out[43]=",ExpressionUUID->"86ba43af-058c-4704-9d1b-ff2389724479"]
+ CellChangeTimes->{
+  3.906211447194626*^9, 3.906211544504368*^9, 3.9062116612559853`*^9, {
+   3.906211791654005*^9, 3.9062118218840847`*^9}, {3.9062118629157267`*^9, 
+   3.906211871901361*^9}, 3.906212639805379*^9, 3.906213203260548*^9, 
+   3.9062326878342333`*^9, 3.906232845385831*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"45dbf999-6ab5-4e1f-95c1-0611738b26c8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
+  RowBox[{"x", "[", 
+   RowBox[{"t_", ",", "\[CurlyEpsilon]_"}], "]"}], ":=", 
   RowBox[{
-   RowBox[{"x", "[", 
-    RowBox[{"k_", ",", "i_"}], "]"}], ":=", 
    RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"4", " ", "\[CurlyEpsilon]"}], "+", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"1", "-", 
+        RowBox[{"4", " ", "\[CurlyEpsilon]"}]}], "]"}], "-", "1"}], ")"}], 
+    "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "+", 
+      RowBox[{"8", " ", "\[CurlyEpsilon]"}]}], ")"}]}], " ", 
+   RowBox[{"Exp", "[", 
     RowBox[{
      RowBox[{
       RowBox[{"(", 
-       RowBox[{"1", "-", "i"}], ")"}], "/", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"1", "-", 
+          RowBox[{"4", " ", "\[CurlyEpsilon]"}]}], "]"}]}], ")"}], "/", 
       RowBox[{"(", 
-       RowBox[{
-        RowBox[{"2", " ", "i"}], "-", "1"}], ")"}]}], " ", 
-     RowBox[{"Exp", "[", 
-      RowBox[{"-", "k"}], "]"}]}], "+", 
-    RowBox[{
-     RowBox[{"i", "/", 
-      RowBox[{"(", 
-       RowBox[{
-        RowBox[{"2", " ", "i"}], "-", "1"}], ")"}]}], " ", 
-     RowBox[{"Exp", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{"i", "-", "1"}], ")"}], "/", "i"}], " ", "k"}], "]"}]}]}]}], 
-  "\n"}], "\[IndentingNewLine]", 
+       RowBox[{"2", " ", "\[CurlyEpsilon]"}], ")"}]}], " ", "t"}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
  RowBox[{"Manipulate", "[", 
   RowBox[{
    RowBox[{"Plot", "[", 
     RowBox[{
-     RowBox[{"x", "[", 
-      RowBox[{"k", ",", "i"}], "]"}], ",", 
+     RowBox[{"x", "[", " ", 
+      RowBox[{"t", ",", "\[Epsilon]"}], "]"}], ",", 
      RowBox[{"{", 
-      RowBox[{"k", ",", "0", ",", "10"}], "}"}], ",", 
+      RowBox[{"t", ",", "0", ",", "1"}], "}"}], ",", 
      RowBox[{"PlotRange", "->", "All"}], ",", 
      RowBox[{"AxesLabel", "->", 
       RowBox[{"{", 
-       RowBox[{"\"\<k\>\"", ",", "\"\<x(k)\>\""}], "}"}]}], ",", 
-     RowBox[{"PlotLabel", "->", "\"\<Plot of x(k) for given i\>\""}]}], "]"}],
-    ",", 
+       RowBox[{"\"\<t\>\"", ",", "\"\<x(t)\>\""}], "}"}]}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Plot of x(t) for given \[Epsilon]\>\""}],
+      ",", 
+     RowBox[{"Epilog", "->", 
+      RowBox[{"{", 
+       RowBox[{"Dashed", ",", "Blue", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", 
+              RowBox[{"10", "^", "6"}]}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"10", "^", "6"}]}], "}"}]}], "}"}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"i", ",", "0.1", ",", "\"\<i\>\""}], "}"}], ",", "0", ",", 
-     "1.5", ",", "0.01"}], "}"}]}], "]"}]}], "Input",
- CellChangeTimes->{{3.906125854276705*^9, 3.906125856268203*^9}, {
-  3.9061266754887466`*^9, 3.906126748718643*^9}},
- CellLabel->"In[44]:=",ExpressionUUID->"2597d27c-0b1a-4e89-add4-1555dd4b601e"],
+      RowBox[{"\[Epsilon]", ",", "0.1", ",", "\"\<\[Epsilon]\>\""}], "}"}], 
+     ",", "0", ",", "0.5", ",", "0.01"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.906212809055996*^9, {3.906212843016172*^9, 3.906212854718789*^9}, {
+   3.9062129024824944`*^9, 3.906212903560923*^9}, {3.906212948855608*^9, 
+   3.906212965964684*^9}, 3.906213024411983*^9, {3.9062131507574997`*^9, 
+   3.90621315757155*^9}},
+ CellLabel->"In[49]:=",ExpressionUUID->"3dd8fcf6-8a90-46d3-a4b0-cde4e65ef789"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`i$$ = 0.14, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`\[Epsilon]$$ = 0.1, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`i$$], 0.1, "i"}, 0, 1.5, 0.01}}, Typeset`size$$ = {
-    360., {117., 121.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True}, 
+       Hold[$CellContext`\[Epsilon]$$], 0.1, "\[Epsilon]"}, 0, 0.5, 0.01}}, 
+    Typeset`size$$ = {360., {122., 126.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`i$$ = 0.1}, 
+     1, StandardForm, "Variables" :> {$CellContext`\[Epsilon]$$ = 0.1}, 
       "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> Plot[
-        $CellContext`x[$CellContext`k, $CellContext`i$$], {$CellContext`k, 0, 
-         10}, PlotRange -> All, AxesLabel -> {"k", "x(k)"}, PlotLabel -> 
-        "Plot of x(k) for given i"], 
-      "Specifications" :> {{{$CellContext`i$$, 0.1, "i"}, 0, 1.5, 0.01}}, 
-      "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{404., {175., 181.}},
+        $CellContext`x[$CellContext`t, $CellContext`\[Epsilon]$$], \
+{$CellContext`t, 0, 1}, PlotRange -> All, AxesLabel -> {"t", "x(t)"}, 
+        PlotLabel -> "Plot of x(t) for given \[Epsilon]", 
+        Epilog -> {Dashed, Blue, 
+          Line[{{1, -10^6}, {1, 10^6}}]}], 
+      "Specifications" :> {{{$CellContext`\[Epsilon]$$, 0.1, "\[Epsilon]"}, 0,
+          0.5, 0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {167., 172.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -9870,13 +9938,134 @@ Cell[BoxData[
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{{3.9061258574894953`*^9, 3.9061258825851097`*^9}, 
-   3.906125954755651*^9, {3.906126749889894*^9, 3.9061267600909863`*^9}},
- CellLabel->"Out[45]=",ExpressionUUID->"774a93e5-11a4-4ffc-b62f-64947ba49bfe"]
+ CellChangeTimes->{{3.906212873275033*^9, 3.906212929339181*^9}, 
+   3.906212966557366*^9, 3.9062130253697987`*^9, {3.906213151279694*^9, 
+   3.90621317636325*^9}, 3.90624146814816*^9},
+ CellLabel->"Out[50]=",ExpressionUUID->"1e7709d4-f7db-4c64-9662-1dc86ed0eb32"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "[", 
+   RowBox[{"t_", ",", "\[CurlyEpsilon]_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "4"}], " ", "\[CurlyEpsilon]"}], "+", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"1", "-", 
+        RowBox[{"4", " ", "\[CurlyEpsilon]"}]}], "]"}], "+", "1"}], ")"}], 
+    "/", 
+    RowBox[{"(", 
+     RowBox[{"2", "-", 
+      RowBox[{"8", " ", "\[CurlyEpsilon]"}]}], ")"}]}], " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Sqrt", "[", 
+          RowBox[{"1", "-", 
+           RowBox[{"4", " ", "\[CurlyEpsilon]"}]}], "]"}], "+", "1"}], 
+        ")"}]}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", "\[CurlyEpsilon]"}], ")"}]}], " ", "t"}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"x", "[", " ", 
+      RowBox[{"t", ",", "\[Epsilon]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"PlotRange", "->", "All"}], ",", 
+     RowBox[{"AxesLabel", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<t\>\"", ",", "\"\<x(t)\>\""}], "}"}]}], ",", 
+     RowBox[{"PlotLabel", "->", "\"\<Plot of x(t) for given \[Epsilon]\>\""}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{"Epilog", "->", 
+      RowBox[{"{", 
+       RowBox[{"Dashed", ",", "Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\[Epsilon]", "/", 
+              RowBox[{"(", 
+               RowBox[{"1", "-", "\[Epsilon]"}], ")"}]}], ",", 
+             RowBox[{"-", 
+              RowBox[{"10", "^", "6"}]}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"\[Epsilon]", "/", 
+              RowBox[{"(", 
+               RowBox[{"1", "-", "\[Epsilon]"}], ")"}]}], ",", 
+             RowBox[{"10", "^", "6"}]}], "}"}]}], "}"}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", "0.1", ",", "\"\<\[Epsilon]\>\""}], "}"}], 
+     ",", "0", ",", "0.5", ",", "0.01"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.906213065778675*^9, 3.906213098359653*^9}, {
+  3.9062131368251667`*^9, 3.906213145572668*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"79fb5ed9-457e-4e47-935d-31122b6c82cf"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Epsilon]$$ = 0.22, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Epsilon]$$], 0.1, "\[Epsilon]"}, 0, 0.5, 0.01}}, 
+    Typeset`size$$ = {360., {122., 126.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`\[Epsilon]$$ = 0.1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        $CellContext`x[$CellContext`t, $CellContext`\[Epsilon]$$], \
+{$CellContext`t, 0, 1}, PlotRange -> All, AxesLabel -> {"t", "x(t)"}, 
+        PlotLabel -> "Plot of x(t) for given \[Epsilon]", 
+        Epilog -> {Dashed, Red, 
+          
+          Line[{{$CellContext`\[Epsilon]$$/(
+             1 - $CellContext`\[Epsilon]$$), -10^6}, \
+{$CellContext`\[Epsilon]$$/(1 - $CellContext`\[Epsilon]$$), 10^6}}]}], 
+      "Specifications" :> {{{$CellContext`\[Epsilon]$$, 0.1, "\[Epsilon]"}, 0,
+          0.5, 0.01}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{404., {167., 172.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.906213099149695*^9, {3.906213146228046*^9, 3.906213194356927*^9}, 
+   3.906241481530428*^9},
+ CellLabel->"Out[52]=",ExpressionUUID->"e5963ffe-186b-404a-8739-24e2b147eb8a"]
 }, Open  ]]
 },
-WindowSize->{808, 851},
-WindowMargins->{{211, Automatic}, {Automatic, 42}},
+WindowSize->{717, 841},
+WindowMargins->{{60, Automatic}, {Automatic, 1}},
 FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (June 3, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"b6f48a8f-213e-4d58-934a-9c5478dd47ba"
@@ -9892,35 +10081,38 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 131, 3, 30, "Input",ExpressionUUID->"ffe8c97a-4650-4562-8096-54241561ac5a"],
 Cell[CellGroupData[{
-Cell[580, 22, 654, 17, 52, "Input",ExpressionUUID->"a2de80ea-c0bf-4fc2-90f0-ba20cb85ebb8"],
-Cell[1237, 41, 159810, 2617, 137, 115316, 1886, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"bfdc7480-49af-455f-8631-7d80dd611eee"]
+Cell[714, 27, 654, 17, 52, "Input",ExpressionUUID->"a2de80ea-c0bf-4fc2-90f0-ba20cb85ebb8"],
+Cell[1371, 46, 159810, 2617, 137, 115316, 1886, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"bfdc7480-49af-455f-8631-7d80dd611eee"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[161084, 2663, 908, 24, 73, "Input",ExpressionUUID->"94eb3a3e-a765-4c83-ba79-3d93fabce6df"],
-Cell[161995, 2689, 204439, 3340, 528, "Output",ExpressionUUID->"7176c1e6-093d-43c4-8917-6e3a94af210a"]
+Cell[161218, 2668, 908, 24, 73, "Input",ExpressionUUID->"94eb3a3e-a765-4c83-ba79-3d93fabce6df"],
+Cell[162129, 2694, 204439, 3340, 528, "Output",ExpressionUUID->"7176c1e6-093d-43c4-8917-6e3a94af210a"]
 }, Open  ]],
-Cell[366449, 6032, 168, 3, 30, "Input",ExpressionUUID->"30300d58-01b9-458a-acca-c2ee4c543480"],
-Cell[366620, 6037, 168, 3, 30, "Input",ExpressionUUID->"489b0fa1-c81b-4490-9b48-214e15beecad"],
+Cell[366583, 6037, 168, 3, 30, "Input",ExpressionUUID->"30300d58-01b9-458a-acca-c2ee4c543480"],
+Cell[366754, 6042, 168, 3, 30, "Input",ExpressionUUID->"489b0fa1-c81b-4490-9b48-214e15beecad"],
 Cell[CellGroupData[{
-Cell[366813, 6044, 224, 5, 30, "Input",ExpressionUUID->"7ef1f29b-9240-420d-b5b3-2fbe1d581bfe"],
-Cell[367040, 6051, 204381, 3340, 391, "Output",ExpressionUUID->"dbc045ca-91c9-4d74-a28f-c04e0132e9d1"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[571458, 9396, 955, 28, 115, "Input",ExpressionUUID->"14992463-0679-4eec-aa9c-671bb6ca52f4"],
-Cell[572416, 9426, 13005, 236, 527, "Output",ExpressionUUID->"73395164-533d-4298-a39d-42453f00b7f7"]
+Cell[366947, 6049, 224, 5, 30, "Input",ExpressionUUID->"7ef1f29b-9240-420d-b5b3-2fbe1d581bfe"],
+Cell[367174, 6056, 204381, 3340, 391, "Output",ExpressionUUID->"dbc045ca-91c9-4d74-a28f-c04e0132e9d1"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[585458, 9667, 2578, 78, 136, "Input",ExpressionUUID->"6c1181e8-63e3-45f3-871e-3fb2af95fdcc"],
-Cell[588039, 9747, 1977, 37, 553, "Output",ExpressionUUID->"86ba43af-058c-4704-9d1b-ff2389724479"]
+Cell[571592, 9401, 955, 28, 115, "Input",ExpressionUUID->"14992463-0679-4eec-aa9c-671bb6ca52f4"],
+Cell[572550, 9431, 13005, 236, 527, "Output",ExpressionUUID->"73395164-533d-4298-a39d-42453f00b7f7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[590053, 9789, 1542, 47, 94, "Input",ExpressionUUID->"2597d27c-0b1a-4e89-add4-1555dd4b601e"],
-Cell[591598, 9838, 1862, 36, 398, "Output",ExpressionUUID->"774a93e5-11a4-4ffc-b62f-64947ba49bfe"]
+Cell[585592, 9672, 3971, 111, 199, "Input",ExpressionUUID->"6c1181e8-63e3-45f3-871e-3fb2af95fdcc"],
+Cell[589566, 9785, 2355, 46, 379, "Output",ExpressionUUID->"45dbf999-6ab5-4e1f-95c1-0611738b26c8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[591958, 9836, 2368, 66, 136, "Input",ExpressionUUID->"3dd8fcf6-8a90-46d3-a4b0-cde4e65ef789"],
+Cell[594329, 9904, 2046, 39, 358, "Output",ExpressionUUID->"1e7709d4-f7db-4c64-9662-1dc86ed0eb32"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[596412, 9948, 2522, 71, 136, "Input",ExpressionUUID->"79fb5ed9-457e-4e47-935d-31122b6c82cf"],
+Cell[598937, 10021, 2116, 42, 358, "Output",ExpressionUUID->"e5963ffe-186b-404a-8739-24e2b147eb8a"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
