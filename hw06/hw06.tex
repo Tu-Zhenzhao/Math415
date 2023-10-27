@@ -202,6 +202,12 @@ For the following system, find the fixed points and classify them by linearizati
 	\end{bmatrix} \]
 	We can see that $\tau = 1 > 0$ and $\Delta = -4 < 0$, so the fixed point $(-2,-2)$ is a saddle point. \\
 	Then we can sketch the phase portrait of the system:	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{3a.jpeg}
+		\caption{Phase portrait of the system}
+		\label{fig:3a}
+	\end{figure}
 
 
 
@@ -239,6 +245,12 @@ For the following system, find the fixed points and classify them by linearizati
 	\end{bmatrix} \]
 	Since this system is symmetric, we can conclude that the fixed points $(-2,n\pi)$ are also non-isolated. \\
 	Then we can sketch the phase portrait of the system:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\linewidth]{3b.jpeg}
+		\caption{Phase portrait of the system}
+		\label{fig:3b}
+	\end{figure}
 
 \end{enumerate}
 
@@ -256,6 +268,47 @@ Consider the cartesian system
 			\[ x(t) = Ae^{-t}, \quad y(t) = Be^{-t} \]
 			Where $A$ and $B$ are constants. Since the $a=-1$ for $x,y$, the fixed point $(0,0)$ is a stable star.
 		\end{proof}
+
+\item When $x(t)=r\cos[\theta(t)]$ and $y(t)=r\sin[\theta(t)]$, we have can plug them into the system and get polar coordinates. Since $x^2+y^2=r^2$, we have the differential equation $x\dot{x}+y\dot{y}=r\dot{r}$. Then we can get:
+				\begin{align*}
+					r\dot{r} &= x(-x-\frac{2y}{\ln(x^2+y^2)})+y(-y+\frac{2x}{\ln(x^2+y^2)}) \\
+					r\dot{r} &= -(x^2+y^2) \\
+					r\dot{r} &= -r^2 \\
+					\dot{r} &= -r
+				\end{align*}
+	Next we need to find the derivative of $\theta(t)$. By $y/x=\tan[\theta(t)]$, we can take derivative on both sides and get:
+	\begin{align*}
+		\frac{x\dot{y}-y\dot{x}}{x^2} &= \sec^2[\theta]\dot{\theta} \\
+		\frac{x\dot{y}-y\dot{x}}{r^2\cos^{2}\theta} &= \sec^2[\theta]\dot{\theta} \\
+		\frac{x\dot{y}-y\dot{x}}{r^2} &= \dot{\theta} \\
+		\dot{\theta} &= \frac{x\dot{y}-y\dot{x}}{r^2}
+	\end{align*}
+	Then we can plug $\dot{r}$ and $\dot{\theta}$ into the system and get:
+	   \begin{align*}
+						 \dot{\theta} &= \frac{x\dot{y}-y\dot{x}}{r^2} \\
+						 \dot{\theta} &= \frac{x(-y+\frac{2x}{\ln(x^2+y^2)})-y(-x-\frac{2y}{\ln(x^2+y^2)})}{r^2} \\
+						 \dot{\theta} &= \frac{-2(x^2+y^2)}{r^2\ln(x^2+y^2)} \\
+						 \dot{\theta} &= 2\frac{r^2}{r^2\ln(r^2)} \\
+						 \dot{\theta} &= 2\frac{1}{\ln(r^2)} \\
+						 \dot{\theta} &= \frac{1}{\ln r}
+		\end{align*}
+	Therefore, the system in polar coordinates is:
+	\[ \dot{r} = -r, \quad \dot{\theta} = \frac{1}{\ln r} \]
+	
+	\item Given initial condition $r(0)=r_0$ and $\theta(0)=\theta_0$ with $r_0 \in (0,1)$, we can solve the system in polar coordinates:
+					\[ r(t) = r_0e^{-t}, \quad \dot{\theta(t)} = \frac{1}{\ln(r_0e^{-t})} \]
+	Then we can find the solution of $\theta(t)$:
+	\begin{align*}
+		\frac{d\theta}{dt} &= \frac{1}{\ln(r_0)-t} \\
+		\int d\theta &= \int \frac{1}{\ln(r_0)-t} dt \\
+		\theta(t) &= \ln(t-\ln(r_0))+C \\
+		\theta(t) &= \theta_0-\ln(-\ln(r_0)) + \ln(t-\ln(r_0)) 
+	\end{align*}
+	Therefore, the solution of the system is:
+	\[ r(t) = r_0e^{-t}, \quad \theta(t) = \theta_0-\ln(-\ln(r_0)) + \ln(t-\ln(r_0)) \]
+	
+	\item By looking at $r(t)$ we can see that when $t \to \infty$, $r_0e^{-t} \to 0$. Then if we looking at $|\theta(t)|$, we can see that when $t \to \infty$, $\ln(t-\ln(r_0)) \to \infty$. Therefore, we can conclude that $r(t)$ tell us the trajectory is approaching to the origin which is stable and the $\theta(t)$ tell us the trajectory is spiraling around the origin getting denser and denser. 
+
 \end{enumerate}
 
 
