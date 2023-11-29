@@ -1,0 +1,95 @@
+
+\documentclass[12pt]{exam}
+\usepackage{amsthm}
+\usepackage{libertine}
+%\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{minted}
+\def\code#1{\texttt{#1}}
+\usepackage{amssymb}
+\usepackage{xcolor}
+% for plotting
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+
+\newcommand{\quotebox}[1]
+{
+  \begin{center}
+    \fcolorbox{white}{blue!15!gray!15}{
+      \begin{minipage}{0.7\linewidth}\vspace{10pt}
+        \center
+        \begin{minipage}{0.8\linewidth}{\space\Huge``}{\setlength{\parindent}{1.5em}#1}{\hspace{1.5em}\break\null\Huge\hfill''}
+        \end{minipage}
+        \smallbreak
+      \end{minipage}
+    }
+\end{center}
+}
+
+%\DeclareUnicodeCharacter{2212}{-}
+
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+    
+\urlstyle{same}
+
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\newcommand{\class}{Math 415} % This is the name of the course 
+\newcommand{\examnum}{Homework-10} % This is the name of the assignment
+\newcommand{\examdate}{Nov 27} % This is the due date
+\newcommand{\timelimit}{}
+
+\newcommand{\BO}{\mathcal{O}}
+
+
+
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & \textit{Zhenzhao Tu}\\ %Your name here instead, obviously 
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+% --
+
+
+
+
+
+
+
+
+\end{document}
+
