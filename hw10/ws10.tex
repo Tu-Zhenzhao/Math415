@@ -116,7 +116,15 @@ Consider the system
 where $x \geq 0$ is the dimensionless population of the prey, $y \geq 0$ is the dimensionless population of the predator, and $a \geq 0$ is a control parameter.
 
 \begin{enumerate}[(a)]
-	\item Sketch the nullclines in the first quadrant $(x, y \geq 0)$.
+	\item Sketch the nullclines in the first quadrant $(x, y \geq 0)$. \\
+	Here is the nullclines in the first quadrant.
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.7\linewidth]{2a.jpeg}
+		\caption{Nullclines in the first quadrant}
+		\label{fig:2a}
+	\end{figure}
+
 	When $\dot{x} = \dot{y} = 0$, we have nullclines $x = 0$, $y = 0$, $x = 1$, and $x=a$. Thus we have three fixed points $(x,y) = (0,0)$, $(1,0)$, and $(a,a-a^2)$. The Jacobian matrix of the system is
 	\[ J(x,y) = \begin{bmatrix}
 		2x(1-x) - y & -x \\
@@ -141,7 +149,16 @@ where $x \geq 0$ is the dimensionless population of the prey, $y \geq 0$ is the 
 		\item $(a,a-a^2)$: $\tau = a-2a^2$, $\Delta = a^2 - 2a^3$. When $a=0$, the fixed point is uniform motion. When $0 < a < 1/2$, the fixed point is an unstable spiral. When $a = 1/2$, the fixed point is also uniform motion. When $a > 1/2$, the fixed point is a saddle point.	
 	\end{enumerate}
 
-	\item Sketch the phase portrait for $a >1$. What happens to the predators as $t \to \infty$?
+	\item Sketch the phase portrait for $a >1$. What happens to the predators as $t \to \infty$? \\
+		Here is the phase portrait for $a > 1$ when $a = 2$.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\linewidth]{2c.jpeg}
+			\caption{Phase portrait for $a = 2$}
+			\label{fig:2c}
+		\end{figure}
+
+		As $t \to \infty$, the predators will go to extinction and the prey will go to $1$.
 	
 	\item What type of bifurcation occurs at $a = 1$? \\
 	At $a = 1$, the fixed point $(1,0)$ changes from a saddle point to a stable node. Thus, the bifurcation is a saddle-node bifurcation.
