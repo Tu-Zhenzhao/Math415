@@ -1,0 +1,223 @@
+
+\documentclass[12pt]{exam}
+\usepackage{amsthm}
+\usepackage{libertine}
+%\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\graphicspath{{./}}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{minted}
+\def\code#1{\texttt{#1}}
+\usepackage{amssymb}
+\usepackage{xcolor}
+% for plotting
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\newcommand{\quotebox}[1]
+{
+  \begin{center}
+    \fcolorbox{white}{blue!15!gray!15}{
+      \begin{minipage}{0.7\linewidth}\vspace{10pt}
+        \center
+        \begin{minipage}{0.8\linewidth}{\space\Huge``}{\setlength{\parindent}{1.5em}#1}{\hspace{1.5em}\break\null\Huge\hfill''}
+        \end{minipage}
+        \smallbreak
+      \end{minipage}
+    }
+\end{center}
+}
+
+%\DeclareUnicodeCharacter{2212}{-}
+
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+    
+\urlstyle{same}
+
+\pgfplotsset{width=10cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\newcommand{\class}{Math 415} % This is the name of the course 
+\newcommand{\examnum}{Homework-11} % This is the name of the assignment
+\newcommand{\examdate}{Dec 6} % This is the due date
+\newcommand{\timelimit}{}
+
+\newcommand{\BO}{\mathcal{O}}
+
+
+
+
+\begin{document}
+\pagestyle{plain}
+\thispagestyle{empty}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & \textit{Zhenzhao Tu}\\ %Your name here instead, obviously 
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+% --
+
+
+\section*{Problem 1}
+Consider the Lorenz equations:
+\[ \dot{x} = \sigma(y-x), \quad \dot{y} = x(r-z)-y, \quad \dot{z} = xy-bz \]
+
+\begin{enumerate}
+	\item Show that the $z$-axis is invariant.
+	\begin{proof}
+		It is clear that $z$-axis is when $x=y=0$. Then $\dot{x} = \sigma (y-x) = 0$, $\dot{y} = 0$, $\dot{z} = -bz$. Then, when $z=0$, $\dot{z} = 0$. When $z < 0$, $\dot{z} = -bz > 0$ when $z > 0$ and $\dot{z} = -bz < 0$. No matter what $z$ is, the trajectory will never leave the $z$-axis. Therefore, the $z$-axis is invariant.
+	\end{proof}
+
+	\item Show that  there all trajectories eventually enter an ellipsoidal region $V(x, y, z) = rx^2 + \sigma y^2 + \sigma(z − 2r)^2 \leq C$ for a sufficiently large $C$.
+\end{enumerate}
+	\begin{proof}
+	For the ellipsoidal region, we can find its derivative:
+	\[ \dot{V} = 2rx\dot{x} + 2\sigma y \dot{y} + 2\sigma(z-2r)\dot{z} \]
+	Then, we can substitute $\dot{x}$, $\dot{y}$, $\dot{z}$ into the equation:
+	\[ \dot{V} = 2rx\sigma(y-x) + 2\sigma y (x(r-z)-y) + 2\sigma(z-2r)(xy-bz) \]
+	Then, we can simplify the equation:
+	\[ \dot{V} = 4br\sigma z - 2b\sigma z^2 - 2r \sigma x^2 - 2\sigma y^2 \]
+	We can refactor the equation:
+	\[ \dot{V} =  2b\sigma r^2 -2b\sigma(r-z)^2 - 2r \sigma x^2 - 2\sigma y^2 \]
+	If we choose $C = 2b\sigma r^2$, then we have $\dot{V} <0$ when $V > C$. Therefore, all trajectories eventually enter an ellipsoidal region $V(x, y, z) = rx^2 + \sigma y^2 + \sigma(z − 2r)^2 \leq C$ for a sufficiently large $C$.
+	\end{proof}
+
+
+\section*{Problem 2}
+Consider the system
+\[ \dot{x} = -vx+zy, \quad \dot{y} = -vy + (z-a)x, \quad \dot{z} = 1-xy \]
+where $v, a > 0$.
+
+\begin{enumerate}
+	\item Show this system is dissipative. 
+	\begin{proof}
+	To check if this system is dissipative, we need to examine how does this system's volumn change. By using the formula in textbook, we have
+	\[ \dot{V}  = \int_S (\mathbf{f} \cdot \mathbf{n}) dA = \int_V \nabla \cdot \mathbf{f} dV \]
+	Then, we can examine the system $\nabla \cdot \mathbf{f}$:
+	\begin{align*}
+		\nabla \cdot \mathbf{f} &= \frac{\partial}{\partial x} (-vx+zy) + \frac{\partial}{\partial y} (-vy + (z-a)x) + \frac{\partial}{\partial z} (1-xy) \\
+		&= -v + -v +0 = -2v < 0
+	\end{align*}
+	Therefore, the system is dissipative.
+	\end{proof}
+
+	\item Show that the fixed points can be written parametrically as $(x^∗,y^∗,z^∗)=(\pm k,\pm k^{−1},vk^2)$, where $k^2 − k^{−2} = a/v$. 
+	\begin{proof}
+	First let's find the fixed point. Let $\dot{x} = 0$, $\dot{y} = 0$, $\dot{z} = 0$, we have
+	\[ -vx+zy = 0, \quad -vy + (z-a)x = 0, \quad 1-xy = 0 \]
+	Then, we can solve the equation and get
+	\[ x = \pm \sqrt{\frac{2}{v}}, \quad y = \pm \sqrt{\frac{v}{2}}, \quad z = a + \frac{v^{2}}{2} \]
+	Then, let $k = \sqrt{\frac{2}{v}}$, we have
+	\[ x = \pm k, \quad y = \pm k^{-1}, \quad z = a + vk^{-2} \]
+	Then, let $k^2 - k^{-2} = a/v$, we have
+	\begin{align*}
+	z &= a + vk^2 \\	
+	  &= vk^{-2} + vk^2 - vk^{-2} \\
+	\end{align*}
+	Thus, we have the fixed point can be written parametrically as $(\pm k,\pm k^{−1},vk^2)$, where $k^2 − k^{−2} = a/v$.
+	\end{proof}
+\end{enumerate}
+
+
+\section*{Problem 3}
+Let $D$ be the disk $x^2 + y^2 \leq 1$ and consider the system in polar coordinates
+\[ \dot{r} = r(1-r^2), \quad \dot{\theta} = 1 \]
+
+\begin{enumerate}
+	\item Is $D$ an invariant set?
+	\begin{proof}
+	To find the limit cycle, we can set $\dot{r} = 0$ and solve for $r$:
+	\[ r(1-r^2) = 0 \]
+	Then, we have $r = 1$ (the $r=0$ is not a cycle). Then, we know that the limit cycle is $r=1$. Since $D$ is a disk less and equal to 1 and the inside of the disk is repelling out to the limit cycle, $D$ is an invariant set.
+	\end{proof}
+
+	\item Does $D$ attract an open set of initial conditions?
+	\begin{proof}
+	From the phase portrait, we can see that the inside of the disk is repelling out to the limit cycle and the outside of the disk is attracting in to the limit cycle. That indicates that $r=1$ is a stable limit cycle. Therefore, $D$ attracts an open set of initial conditions.
+	\end{proof}
+
+	\item Is $D$ an attractor?
+	\begin{proof}
+	Since $r=1$ is the only one limit cycle and condition 1 and 2 are satisfied, $D$ is an attractor.
+	\end{proof}
+\end{enumerate}
+
+\section*{Problem 4}
+Consider the following maps for $x_n \geq 0$, find all fixed points and classify their stability.
+
+\begin{enumerate}[(a)]
+	\item $x_{n+1} = 3x_n - x_n^3$.\\
+	The fixed point id $x^* = 3x^* - (x^*)^3$. Then, we have $x^* = 0, \pm \sqrt{3}$. Then, we can find the stability of each fixed point by using the derivative of the map:
+	\[ f'(x) = 3 - 3x^2, \quad f'(0) = 3 >1, \quad f'(\sqrt{3}) = 0 < 1, \quad f'(-\sqrt{3}) = 0 < 1 \]
+	Thus, $x^* = 0$ is unstable and $x^* = \pm \sqrt{3}$ are stable.
+
+	\item $x_{n+1} = 2x_n/(1+x_n)$.\\
+	The fixed point id $x^* = 2x^*/(1+x^*)$. Then, we have $x^* = 0, 1$. Then, we can find the stability of each fixed point by using the derivative of the map:
+	\[ f'(x) = \frac{2}{(1+x)^2}, \quad f'(0) = 2 >1, \quad f'(1) = 1/4 < 1 \]
+	Thus, $x^* = 0$ is unstable and $x^* = 1$ is stable.
+
+	\item $x_{n+1} = \sqrt{x_n}$.\\
+	The fixed point id $x^* = \sqrt{x^*}$. Then, we have $x^* = 0, 1$. Then, we can find the stability of each fixed point by using the derivative of the map:
+	\[ f'(x) = \frac{1}{2\sqrt{x}}, \quad f'(0) = \infty, \quad f'(1) = 1/2 < 1 \]
+	Thus, $x^* = 0$ is unstable and $x^* = 1$ is stable.
+
+\end{enumerate}
+
+
+\section*{Problem 5}
+Consider the logistic map:
+\[x_{n+1} = rx_n(1-x_n)\]
+
+\begin{enumerate}
+	\item At what value(s) of r does the logistic map have a superstable fixed point?\\
+	To find the superstable fixed point, we need to find the fixed point and the stability of the fixed point. The fixed point is $x^* = rx^*(1-x^*)$. Then, we have $x^* = 0, 1-1/r$. Check each fixed point if it has a vanishing multiplier:
+	\[ f'(x) = r(1-2x), \quad f'(0) = r, \quad f'(1-1/r) = 2-r \]
+	Then, we have superstable fixed point when $r = 0,2$.
+
+	\item Show that if the period-two cycle is superstable then either $p = 1/2$ or $q = 1/2$. Find the corresponding value(s) of $r$.
+	\begin{proof}
+	The period-two cycle occurs when $f^2(x) = x$. Then, we have
+	\[ f^2(x) = r^2x(1-x)(1-rx(1-x)) = x \]
+	Then, refer to the textbook, we have
+	\[ p,q = \frac{r+1\pm \sqrt{r^2-2r-3}}{2r} \]
+	Next we test the stability of the period-two cycle. We can use the derivative of the map:
+	\[ f^2(x)' = -r^2(2x-1)(2rx^2-2rx+1) \]
+	We can find the fixed pioints when the period-two cycle is superstable:
+	\[ f^2(x)' = 0 \]
+	Then, we have $x = 1/2, -1/(2r+2)$ since we only consider $x \geq 0$. Then, the fixed point is $x^* = 1/2$. Then, we can find the corresponding value of $r$:
+	\[ \frac{1}{2} = \frac{r+1\pm \sqrt{r^2-2r-3}}{2r} \]
+	Then, we have $r = 1-\sqrt{5}$ or $r = 1+\sqrt{5}$.
+	\end{proof}
+
+
+\end{enumerate}
+
+
+\end{document}
+
